@@ -4,4 +4,6 @@ extern "C" {
 }
 #include <gtest/gtest.h>
 
+namespace {
 /* Changes to this file will be ignored. */
+}

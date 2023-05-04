@@ -4,4 +4,6 @@ extern "C" {
 }
 #include <gtest/gtest.h>
 
+namespace {
 /* Your tests for Plugboard here. */
+}

@@ -54,8 +54,12 @@ void free_Enigma(Enigma *self);
 /// i.e. 0 -> 'A', 1 -> 'B'
 void get_setting_Enigma(Enigma *self, char *ret);
 
+/// @brief Simulate the tick once.
+/// @param self A high level representation of the machine.
+void tick_Enigma(Enigma *self);
+
 /// @brief Simulate the tick n times.
 /// @param self A high level representation of the machine.
 /// @param n A number represent how many ticks are there.
-void tick_rotors_n_Enigma(Enigma *self, size_t n);
+void tick_n_Enigma(Enigma *self, size_t n);
 #endif

@@ -6,6 +6,8 @@ extern "C" {
 
 #define ECS153 "I REALLY LIKE ECS ONE FIVE THREE"
 
+namespace {
+
 TEST(ExampleTests, TestPlugboard) {
   Enigma *enigma = new_Enigma(0, NULL, NULL, NULL, LETTERS, 5, "ECSONFIVTH");
   char encrypt[64];
@@ -82,3 +84,5 @@ TEST(ExampleTests, IntegralTest) {
   EXPECT_STREQ(ECS153, decrypt);
   free_Enigma(enigma);
 }
+
+} // namespace
