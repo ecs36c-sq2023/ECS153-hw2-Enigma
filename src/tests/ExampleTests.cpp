@@ -1,7 +1,7 @@
 extern "C" {
 #include "Enigma.h"
 #include "common.h"
-};
+}
 #include <gtest/gtest.h>
 
 #define ECS153 "I REALLY LIKE ECS ONE FIVE THREE"
