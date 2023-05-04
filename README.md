@@ -42,9 +42,9 @@ You can use it to encrypt many things.
 
 For a rotor that turns, `25 + 1 = 0 `. It means that if the rotor shows "Z" (25), and you tick it once, you get "A" (0). Mathmatically speaking, that's module arithmetic.
 
-You might need some of the following properties when turning a rotor ($\%$ is modular in C):
+You might need some of the following properties when turning a rotor (`%` is modular in C):
 
-$$a + b = ((a \% n) + (b \% n)) \% n$$
+`a + b == ((a % n) + (b % n)) % n`
 
 The rule works the same for minus.
 However, modular in C doesn't work quite the same as math. For example, `-1 % 3` may give you `-1` instead of `2`. (Depends on compiler, system, etc.) You can add `n` before every module operations. `(-1 + n) % n == n - 1` instead of a negative number.
