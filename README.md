@@ -155,6 +155,11 @@ You should use the script provided to create a submission:
 
 Submit the generated zip file to gradescope should work.
 
+If you got `No such file or directory: './src/build_asan/Main'` on canvas, make sure you are:
+
+1. Compiling your code with asan
+2. Using GNU 11.3.0
+
 # Coding guide
 
 ## For the bald

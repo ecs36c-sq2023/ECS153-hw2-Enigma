@@ -64,7 +64,7 @@ TEST(ExampleTests, TestRotorTicking) {
   Enigma *enigma = get_default_Enigma();
   char settings[8];
   memset(settings, 0, 8);
-  tick_rotors_n_Enigma(enigma, 153);
+  tick_n_Enigma(enigma, 153);
   get_setting_Enigma(enigma, settings);
   ASSERT_STREQ("YLD", settings);
   free_Enigma(enigma);
