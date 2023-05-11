@@ -38,10 +38,10 @@ Enigma *new_Enigma(size_t num_rotors, const char **rotors, size_t *rings,
 /// @return dst
 char *encrypt_Enigma(Enigma *self, char *dst, const char *src);
 
-/// @brief Reset the Enigma to inits
+/// @brief Reset the Enigma to the new setting
 /// @param self A high level representation of the machine.
-/// @param inits The initial setting for each rotor.
-void reset_rotor_Enigma(Enigma *self, size_t *inits);
+/// @param new_setting The new setting for each rotor.
+void reset_rotor_Enigma(Enigma *self, size_t *new_setting);
 
 /// @brief Deallocates the Enigma machine.
 /// @param self A high level representation of the machine.
