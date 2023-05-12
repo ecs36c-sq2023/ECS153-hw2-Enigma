@@ -38,10 +38,10 @@ Enigma *new_Enigma(size_t num_rotors, const char **rotors, size_t *rings,
 /// @return dst
 char *encrypt_Enigma(Enigma *self, char *dst, const char *src);
 
-/// @brief Reset the Enigma to inits
+/// @brief Reset the Enigma to the new setting
 /// @param self A high level representation of the machine.
-/// @param inits The initial setting for each rotor.
-void reset_rotor_Enigma(Enigma *self, size_t *inits);
+/// @param new_setting The new setting for each rotor.
+void reset_rotor_Enigma(Enigma *self, size_t *new_setting);
 
 /// @brief Deallocates the Enigma machine.
 /// @param self A high level representation of the machine.
@@ -54,8 +54,12 @@ void free_Enigma(Enigma *self);
 /// i.e. 0 -> 'A', 1 -> 'B'
 void get_setting_Enigma(Enigma *self, char *ret);
 
+/// @brief Simulate the tick once.
+/// @param self A high level representation of the machine.
+void tick_Enigma(Enigma *self);
+
 /// @brief Simulate the tick n times.
 /// @param self A high level representation of the machine.
 /// @param n A number represent how many ticks are there.
-void tick_rotors_n_Enigma(Enigma *self, size_t n);
+void tick_n_Enigma(Enigma *self, size_t n);
 #endif

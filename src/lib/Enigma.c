@@ -1,5 +1,6 @@
 #include "Enigma.h"
 #include "EnigmaImpl.h"
+#include "Plugboard.h"
 #include "Reflector.h"
 #include "Rotor.h"
 

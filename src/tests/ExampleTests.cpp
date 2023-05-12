@@ -1,10 +1,12 @@
 extern "C" {
 #include "Enigma.h"
 #include "common.h"
-};
+}
 #include <gtest/gtest.h>
 
 #define ECS153 "I REALLY LIKE ECS ONE FIVE THREE"
+
+namespace {
 
 TEST(ExampleTests, TestPlugboard) {
   Enigma *enigma = new_Enigma(0, NULL, NULL, NULL, LETTERS, 5, "ECSONFIVTH");
@@ -62,7 +64,7 @@ TEST(ExampleTests, TestRotorTicking) {
   Enigma *enigma = get_default_Enigma();
   char settings[8];
   memset(settings, 0, 8);
-  tick_rotors_n_Enigma(enigma, 153);
+  tick_n_Enigma(enigma, 153);
   get_setting_Enigma(enigma, settings);
   ASSERT_STREQ("YLD", settings);
   free_Enigma(enigma);
@@ -114,3 +116,5 @@ TEST(ExampleTests, IntegralTest) {
   EXPECT_STREQ(ECS153, decrypt);
   free_Enigma(enigma);
 }
+
+} // namespace
