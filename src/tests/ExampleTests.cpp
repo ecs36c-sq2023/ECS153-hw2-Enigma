@@ -68,6 +68,38 @@ TEST(ExampleTests, TestRotorTicking) {
   free_Enigma(enigma);
 }
 
+TEST(ExampleTests, TestEnigmaOneRotorWORing) {
+  // Plugboard: C->C
+  // Rotor I: C->J
+  // Reflector: J->B
+  // Reverse Rotor I: B->E
+  // Plugboard: E->E
+  const char *rotors[] = {ROTOR_I};
+  size_t rings[] = {0};
+  size_t inits[] = {1};
+  Enigma *enigma = new_Enigma(1, rotors, rings, inits, I_UKW_A, 0, NULL);
+  char encrypt[] = "\0\0\0\0";
+  encrypt_Enigma(enigma, encrypt, "C");
+  ASSERT_STREQ(encrypt, "E");
+  free_Enigma(enigma);
+}
+
+TEST(ExampleTests, TestEnigmaOneRotorWRing) {
+  // Plugboard: C->C
+  // Rotor I: C->E
+  // Reflector: E->A
+  // Reverse Rotor I: A->V
+  // Plugboard: V->V
+  const char *rotors[] = {ROTOR_I};
+  size_t rings[] = {1};
+  size_t inits[] = {1};
+  Enigma *enigma = new_Enigma(1, rotors, rings, inits, I_UKW_A, 0, NULL);
+  char encrypt[] = "\0\0\0\0";
+  encrypt_Enigma(enigma, encrypt, "C");
+  ASSERT_STREQ(encrypt, "V");
+  free_Enigma(enigma);
+}
+
 TEST(ExampleTests, IntegralTest) {
   Enigma *enigma = get_default_Enigma();
   char encrypt[64];
